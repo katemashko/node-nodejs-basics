@@ -20,7 +20,6 @@ const copy = async () => {
     "src/fs/files",
     "src/fs/files_copy",
     { recursive: true },
-    { errorOnExist: true },
     (err) => {
       console.log(err);
     }
