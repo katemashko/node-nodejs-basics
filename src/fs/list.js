@@ -1,8 +1,8 @@
 import fs from "node:fs/promises";
 
-const folderExists = async () => {
+const folderExists = async (folderPath) => {
   try {
-    await fs.access("src/fs/files", fs.constants.F_OK);
+    await fs.access(folderPath, fs.constants.F_OK);
     return true;
   } catch (error) {
     return false;

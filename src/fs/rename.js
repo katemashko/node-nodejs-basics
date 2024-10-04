@@ -18,10 +18,7 @@ const rename = async () => {
   }
   await fs.rename(
     "src/fs/files/wrongFilename.txt",
-    "src/fs/files/properFilename.md",
-    (err) => {
-      console.log(err);
-    }
+    "src/fs/files/properFilename.md"
   );
 };
 

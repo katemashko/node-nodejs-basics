@@ -1,6 +1,6 @@
 import fs from "node:fs/promises";
 
-const ifFileExists = async (filePath) => {
+const fileExists = async (filePath) => {
   try {
     await fs.access(filePath, fs.constants.F_OK);
     return true;
@@ -10,7 +10,7 @@ const ifFileExists = async (filePath) => {
 };
 
 const create = async () => {
-  if (await ifFileExists("src/fs/files/fresh.txt")) {
+  if (await fileExists("src/fs/files/fresh.txt")) {
     throw new Error("FS operation failed");
   }
   const content = "I am fresh and young";

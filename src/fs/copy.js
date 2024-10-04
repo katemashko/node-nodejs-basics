@@ -16,14 +16,7 @@ const copy = async () => {
   ) {
     throw new Error("FS operation failed");
   }
-  await fs.cp(
-    "src/fs/files",
-    "src/fs/files_copy",
-    { recursive: true },
-    (err) => {
-      console.log(err);
-    }
-  );
+  await fs.cp("src/fs/files", "src/fs/files_copy", { recursive: true });
 };
 
 await copy();

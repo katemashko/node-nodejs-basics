@@ -13,7 +13,7 @@ const remove = async () => {
   if (!(await fileExists("src/fs/files/fileToRemove.txt"))) {
     throw new Error("FS operation failed");
   }
-  await fs.unlink("src/fs/files/fileToRemove.txt", (err) => console.log(err));
+  await fs.unlink("src/fs/files/fileToRemove.txt");
 };
 
 await remove();
