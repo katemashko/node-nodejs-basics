@@ -7,9 +7,9 @@ const outputFileArchive = "src/zip/files/archive.gz";
 const compress = async () => {
   const gzip = zlib.createGzip();
   const sourceFile = await fs.createReadStream(inputFilePath);
-  const destinationFile = await fs.createWriteStream(outputFileArchive);
+  const compressedFile = await fs.createWriteStream(outputFileArchive);
 
-  sourceFile.pipe(gzip).pipe(destinationFile);
+  sourceFile.pipe(gzip).pipe(compressedFile);
 };
 
 await compress();
